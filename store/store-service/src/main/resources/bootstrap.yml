@@ -4,11 +4,11 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: ${NACOS_CONFIG_ADDR}
+        server-addr: ${NACOS}
         metadata:
           version: V1.0.0
       config:
-        server-addr: ${NACOS_CONFIG_ADDR}
+        server-addr: ${NACOS}
         shared-dataids: store.yml
   main:
     allow-bean-definition-overriding: true

@@ -19,7 +19,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class MainApplication {
 
 	public static void main(String[] args) {
-		// 本地开发需加上环境： NACOS_CONFIG_ADDR = http://49.234.123.192:8848/
+		// 本地开发需加上环境： NACOS = 49.234.123.192:8848
 		SpringApplication.run(MainApplication.class, args);
 	}
 
