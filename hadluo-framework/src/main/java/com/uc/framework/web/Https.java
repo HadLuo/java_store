@@ -60,12 +60,12 @@ public class Https {
             callback.onSuccess(r.getContent());
         } else {
             String msg = "http get请求失败:url=" + url + ",r=" + r;
-            AlertContext.robot().alert(msg);
             Logs.e(Https.class, msg);
             throw new RuntimeException(msg);
         }
 
     }
+    
 
     /**
      * 发送get请求；带请求参数

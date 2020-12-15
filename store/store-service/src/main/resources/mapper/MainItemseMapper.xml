@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hadluo.store.service.mapper.MainItemsMapper">
+	<resultMap id="BaseResultMap" type="com.hadluo.store.api.pojo.MainItems">
+		<id column="id" property="id"/>
+		<result column="name" property="name" />
+	    <result column="item_id" property="itemId" />
+	    <result column="sort" property="sort" />
+	    <result column="is_delete" property="isDelete" />
+	</resultMap>
+
+	<select id="selectSortByPage" resultMap="BaseResultMap">
+		select
+		*
+		from
+		t_main_items where 1=1 and is_delete=0
+		order by sort desc
+	</select>
+</mapper>
