@@ -14,6 +14,7 @@ public class Item {
 	private Integer id;
 	/** 类型 */
 	private Integer type;
+	private Integer kindId;
 	/** 标题 */
 	private String title;
 	/** 列表的预览 */

@@ -12,6 +12,7 @@
 	    <result column="content" property="content" />
 		<result column="type" property="type"  />
 		<result column="src" property="src"  />
+		<result column="kind_id" property="kindId"  />
 		<result column="create_time" property="createTime" />
 	</resultMap>
 
@@ -19,11 +20,14 @@
 		parameterType="com.hadluo.store.service.req.ItemSelect"
 		resultMap="BaseResultMap">
 		select
-		id,title,preview,pv,src,up,cover,type,create_time
+		id,title,preview,pv,src,up,cover,type,create_time,kind_id
 		from
 		t_item where 1=1 
-		<if test="type != null and type != -1">
+		<if test="type != null and type != 0">
 			and type = #{type}
+		</if>
+		<if test="kindId != null and kindId != 0">
+			and kind_id = #{kindId}
 		</if>
 		<if test="title != null and title != ''">
 			and title LIKE CONCAT('%',#{title},'%')
